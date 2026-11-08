@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="Nadin Elshafey — AI Engineer working across generative AI, LLMs, AI agents, and MLOps.">
+  <title>Nadin Elshafey — AI Engineer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e9;
+      --paper-deep: #e9e5db;
+      --ink: #20231f;
+      --muted: #62665f;
+      --line: #cfcec4;
+      --accent: #bd4b32;
+      --accent-dark: #873623;
+      --green: #344c3b;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --page: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    a:hover { color: var(--accent-dark); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 76px; border-bottom: 1px solid var(--line); gap: 24px;
+    }
+    .wordmark { font-family: var(--serif); font-size: 19px; font-weight: 700; letter-spacing: -.03em; text-decoration: none; }
+    .nav { display: flex; align-items: center; gap: clamp(14px, 2.6vw, 34px); font-size: 13px; }
+    .nav a { text-decoration: none; color: var(--muted); }
+    .nav a:hover { color: var(--ink); }
+    .nav .contact-link { color: var(--accent-dark); }
+    .repo-figure { max-width: 760px; margin: 32px auto 0; }
+    .repo-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+    .repo-figure figcaption { margin-top: 8px; color: var(--muted); font-size: 11px; }
+    .hero {
+      padding: clamp(70px, 12vw, 150px) 0 88px;
+      display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(230px, .6fr); gap: 9%; align-items: end;
+    }
+    .eyebrow, .section-kicker, .meta, .chip, .timeline-date, .footer-note {
+      font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em;
+    }
+    .eyebrow { color: var(--accent-dark); font-size: 11px; margin: 0 0 22px; }
+    h1 { max-width: 760px; margin: 0; font-family: var(--serif); font-size: clamp(54px, 8vw, 100px); line-height: .97; letter-spacing: -.065em; font-weight: 500; }
+    .hero-lede { max-width: 730px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.55; margin: 28px 0 0; }
+    .hero-lede strong { color: var(--ink); font-weight: 600; }
+    .hero-aside { border-top: 1px solid var(--ink); padding-top: 17px; }
+    .hero-aside .meta { color: var(--muted); font-size: 10px; }
+    .hero-aside p { margin: 9px 0 18px; font-size: 14px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 15px; font-size: 13px; }
+    .hero-links a { color: var(--accent-dark); }
+    .rule-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 17px 0; }
+    .rule-band p { margin: 0; color: var(--muted); font-family: var(--mono); font-size: 11px; letter-spacing: .06em; }
+    main section { padding: 92px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 44px; margin-bottom: 42px; }
+    .section-kicker { color: var(--accent-dark); font-size: 10px; padding-top: 8px; }
+    h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4.4vw, 55px); line-height: 1.05; letter-spacing: -.045em; margin: 0; }
+    .section-intro { color: var(--muted); max-width: 710px; margin: 16px 0 0; }
+    .experience-list { margin-left: 220px; border-top: 1px solid var(--line); }
+    .experience { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 34px; padding: 30px 0 34px; border-bottom: 1px solid var(--line); }
+    .timeline-date { font-size: 10px; color: var(--muted); padding-top: 5px; }
+    .experience h3, .project h3 { margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600; letter-spacing: -.025em; }
+    .company { margin: 5px 0 14px; color: var(--accent-dark); font-size: 13px; }
+    .experience p, .project p { color: var(--muted); margin: 0 0 12px; font-size: 14px; }
+    .experience ul { padding-left: 18px; margin: 12px 0 16px; color: var(--muted); font-size: 14px; }
+    .experience li { padding-left: 4px; margin: 4px 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .chip { font-size: 9px; color: var(--green); border: 1px solid #aab3a8; padding: 4px 8px; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 42px; border-top: 1px solid var(--line); }
+    .project { padding: 26px 0 30px; border-bottom: 1px solid var(--line); }
+    .project .meta { color: var(--accent-dark); font-size: 10px; margin: 0 0 11px; }
+    .project p { margin-top: 11px; }
+    .result { display: inline-block; color: var(--ink); border-bottom: 1px solid var(--accent); padding-bottom: 2px; font-family: var(--mono); font-size: 12px; margin-top: 5px; }
+    .skills-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 44px; }
+    .skills-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 38px; }
+    .skill-group { border-top: 1px solid var(--ink); padding: 15px 0 21px; }
+    .skill-group h3 { font-size: 14px; margin: 0 0 9px; }
+    .skill-group p { color: var(--muted); font-size: 13px; line-height: 1.8; margin: 0; }
+    .education-list { border-top: 1px solid var(--line); margin-left: 220px; }
+    .education-item { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 34px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .education-item h3 { margin: 0; font-size: 16px; }
+    .education-item p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+    .contact-section { background: var(--green); color: var(--paper); border: 0; }
+    .contact-section .section-kicker { color: #e3a38f; }
+    .contact-section .section-intro { color: #d2d9cf; }
+    .contact-content { margin-left: 264px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; }
+    .email { font-family: var(--serif); font-size: clamp(25px, 4vw, 42px); text-decoration-color: #e3a38f; }
+    .contact-links { display: flex; gap: 18px; font-size: 13px; color: #e5e9e1; }
+    footer { padding: 23px 0 35px; display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 11px; }
+    .footer-note { font-size: 9px; }
+    .print-button { border: 1px solid var(--line); background: transparent; padding: 8px 12px; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
+    .print-button:hover { border-color: var(--ink); color: var(--ink); }
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--page), calc(100% - 32px)); }
+      .topbar { min-height: 64px; align-items: flex-start; padding: 18px 0; }
+      .nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; font-size: 11px; }
+      .hero { grid-template-columns: 1fr; gap: 42px; padding: 78px 0 62px; }
+      .hero-aside { max-width: 420px; }
+      main section { padding: 66px 0; }
+      .section-head, .skills-layout { grid-template-columns: 1fr; gap: 12px; }
+      .experience-list, .education-list { margin-left: 0; }
+      .experience, .education-item { grid-template-columns: 1fr; gap: 9px; }
+      .timeline-date { padding: 0; }
+      .contact-content { margin-left: 0; }
+    }
+    @media (max-width: 520px) {
+      .wordmark { font-size: 16px; }
+      .nav { max-width: 215px; }
+      .project-grid, .skills-list { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(49px, 15vw, 72px); }
+      footer { flex-direction: column; }
+    }
+    @media print {
+      :root { --paper: #fff; --ink: #111; --muted: #333; --line: #bbb; }
+      body { background: #fff; font-size: 11pt; }
+      .wrap { width: 100%; }
+      .topbar, .print-button { display: none; }
+      .hero { padding: 25px 0 32px; }
+      h1 { font-size: 52pt; }
+      main section { padding: 28px 0; break-inside: avoid; }
+      .experience, .project, .education-item { break-inside: avoid; }
+      .contact-section { background: #fff; color: #111; }
+      .contact-section .section-intro, .contact-links { color: #333; }
+      a { text-decoration: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Nadin Elshafey, home">Nadin Elshafey</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#code">GitHub</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#about">Education</a>
+        <a class="contact-link" href="#contact">Contact ↗</a>
+      </nav>
+    </header>
+
+    <header class="hero" id="top">
+      <div>
+        <p class="eyebrow">AI Engineer · Generative AI · LLMs · AI Agents</p>
+        <h1>Building AI<br>that earns trust.</h1>
+        <p class="hero-lede">I’m <strong>Nadin Elshafey</strong>, an AI engineer working across generative AI, language models, agentic systems, and MLOps. I connect research and engineering to build useful, reliable AI applications.</p>
+      </div>
+      <aside class="hero-aside" aria-label="Current profile">
+        <span class="meta">Currently</span>
+        <p>AI Engineer at Kiwilytics<br>Palaiseau, France</p>
+        <span class="meta">Focus</span>
+        <p>LLM applications · RAG · AI agents · model evaluation</p>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/nadin-elshafey-5aa901210/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/nadeenfarid" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+    </header>
+
+    <div class="rule-band"><p>Applied AI / Formal methods / Engineering systems / Knowledge sharing</p></div>
+
+    <main>
+      <section id="work" aria-labelledby="work-title">
+        <div class="section-head">
+          <div class="section-kicker">01 — Experience</div>
+          <div><h2 id="work-title">Research-minded.<br>Engineering-led.</h2><p class="section-intro">My work spans production-oriented AI, applied research, and intelligent tools for complex engineering environments.</p></div>
+        </div>
+        <div class="experience-list">
+          <article class="experience">
+            <div class="timeline-date">Sep 2026 — Present</div>
+            <div>
+              <h3>AI Engineer</h3><div class="company">Kiwilytics · United States</div>
+              <p>Developing LLM-powered systems for document workflows, with an emphasis on useful retrieval, dependable structured outputs, and integration into business applications.</p>
+              <ul>
+                <li>Built AI-agent workflows for document analysis, classification, and information extraction.</li>
+                <li>Implemented RAG pipelines using embeddings and vector search; refined retrieval relevance and response reliability.</li>
+                <li>Designed prompts and structured JSON generation, integrated workflows with REST APIs, and evaluated model responses.</li>
+                <li>Professional experience with Copilot Studio.</li>
+              </ul>
+              <div class="tag-row"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">AI agents</span><span class="chip">Copilot Studio</span><span class="chip">Python</span><span class="chip">REST APIs</span></div>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="timeline-date">Mar 2026 — Sep 2026</div>
+            <div>
+              <h3>AI Research &amp; MLOps Engineer</h3><div class="company">CEA List · Nano-INNOV, Palaiseau</div>
+              <p>Explored how LLMs can generate formal ACSL annotations from C code, combining model experimentation with deterministic verification.</p>
+              <ul>
+                <li>Designed an end-to-end Python pipeline for annotation generation, inference, post-processing, and verification.</li>
+                <li>Benchmarked local and API-based models using proof success, latency, and inference cost.</li>
+                <li>Integrated Frama-C/WP, Why3, and Alt-Ergo into automated evaluation workflows.</li>
+              </ul>
+              <span class="result">236 / 325 proof goals proved · 72.62% proof success rate</span>
+              <div class="tag-row"><span class="chip">Python</span><span class="chip">Frama-C</span><span class="chip">ACSL</span><span class="chip">Hugging Face</span><span class="chip">MLOps</span></div>
+            </div>
+          </article>
+          <article class="experience">
+            <div class="timeline-date">Apr 2025 — Jul 2025</div>
+            <div>
+              <h3>AI Engineering Intern</h3><div class="company">ISAE-SUPAERO · Capgemini project · Toulouse</div>
+              <p>Designed a Capella add-on that brings an AI assistant into a Model-Based Systems Engineering environment.</p>
+              <ul>
+                <li>Developed natural-language workflows to generate actors, scenarios, and system components.</li>
+                <li>Connected locally deployed LLMs through Ollama and integrated MCP to provide access to Capella model context.</li>
+              </ul>
+              <div class="tag-row"><span class="chip">Python</span><span class="chip">Ollama</span><span class="chip">MCP</span><span class="chip">Capella</span><span class="chip">MBSE</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <div class="section-kicker">02 — Selected work</div>
+          <div><h2 id="projects-title">From model to<br>meaningful system.</h2><p class="section-intro">A selection of projects at the intersection of AI, software correctness, engineering, and applied research.</p></div>
+        </div>
+        <div class="project-grid">
+          <article class="project"><p class="meta">CEA List · 2026</p><h3>LLM-assisted formal verification</h3><p>Evaluated language models for generating ACSL specifications from C programs, using Frama-C and supporting provers to test whether generated annotations could be formally verified.</p><div class="tag-row"><span class="chip">Formal methods</span><span class="chip">LLM evaluation</span><span class="chip">C / Python</span></div></article>
+          <article class="project"><p class="meta">Kiwilytics · 2026–</p><h3>Intelligent document analysis</h3><p>Developing agent-based document workflows that combine retrieval-augmented generation, embeddings, vector search, structured JSON, and application integrations.</p><div class="tag-row"><span class="chip">Document AI</span><span class="chip">RAG</span><span class="chip">Copilot Studio</span></div></article>
+          <article class="project"><p class="meta">ISAE-SUPAERO · 2025</p><h3>AI assistant for systems engineering</h3><p>Integrated an AI assistant into Capella to help generate model elements from natural-language prompts, with MCP connecting the model context to locally deployed language models.</p><div class="tag-row"><span class="chip">MBSE</span><span class="chip">MCP</span><span class="chip">Ollama</span></div></article>
+          <article class="project"><p class="meta">Research project · 2024</p><h3>AI for preoperative planning</h3><p>Contributed to research and an AI-based website exploring deep learning for preoperative planning in aortic valve replacement.</p><div class="tag-row"><span class="chip">Deep learning</span><span class="chip">Medical AI</span><span class="chip">IEEE 3ICT 2024</span></div></article>
+          <article class="project"><p class="meta">Research publication · ICMISI 2024</p><h3>Image captioning with a vision encoder–decoder</h3><p>Research on generating natural-language descriptions of images using a vision encoder–decoder model.</p><div class="tag-row"><span class="chip">Computer vision</span><span class="chip">Deep learning</span><span class="chip">IEEE</span></div></article>
+        </div>
+      </section>
+
+      <section id="code" aria-labelledby="code-title">
+        <div class="section-head">
+          <div class="section-kicker">03 — GitHub</div>
+          <div><h2 id="code-title">Code, experiments,<br>and engineering.</h2><p class="section-intro">Selected public repositories from my GitHub profile, spanning formal verification, model deployment, and high-performance computing.</p></div>
+        </div>
+        <div class="project-grid">
+          <article class="project"><p class="meta">C++ · Clang LibTooling</p><h3><a href="https://github.com/nadeenfarid/mutation_tool" target="_blank" rel="noreferrer">Source-level mutation testing ↗</a></h3><p>A C mutation-testing tool that creates single-token source variants to evaluate ACSL specifications with Frama-C/WP, preserving the surrounding source and annotations.</p><div class="tag-row"><span class="chip">C++</span><span class="chip">Clang</span><span class="chip">ACSL</span><span class="chip">Frama-C</span></div></article>
+          <article class="project"><p class="meta">Python · PyTorch · Gradio</p><h3><a href="https://github.com/nadeenfarid/pytorch-to-huggingface-spaces" target="_blank" rel="noreferrer">Deploying a PyTorch model ↗</a></h3><p>An end-to-end MNIST digit-classifier tutorial separating model training from a Gradio app and showing deployment to Hugging Face Spaces.</p><div class="tag-row"><span class="chip">PyTorch</span><span class="chip">Gradio</span><span class="chip">Hugging Face Spaces</span></div></article>
+          <article class="project"><p class="meta">C++17 · Batsim · HPC</p><h3><a href="https://github.com/nadeenfarid/batsim-project_team1" target="_blank" rel="noreferrer">EASY scheduling algorithms ↗</a></h3><p>Implementation and evaluation of EASY-based job scheduling variants with the Batsim simulator, including comparisons of queue-reordering policies.</p><div class="tag-row"><span class="chip">C++</span><span class="chip">Batsim</span><span class="chip">HPC scheduling</span></div></article>
+        </div>
+        <figure class="repo-figure">
+          <img src="assets/batsim-mean-waiting.png" alt="Bar chart from the Batsim repository comparing average job waiting time across seven scheduling queue policies, with no threshold and a one-hour threshold" width="1500" height="900" loading="lazy">
+          <figcaption>Average waiting time by queue policy, from the <a href="https://github.com/nadeenfarid/batsim-project_team1" target="_blank" rel="noreferrer">Batsim project repository</a>.</figcaption>
+        </figure>
+        <p class="hero-links" style="margin:24px 0 0"><a href="https://github.com/nadeenfarid" target="_blank" rel="noreferrer">Browse all public repositories on GitHub ↗</a></p>
+      </section>
+
+      <section id="expertise" aria-labelledby="expertise-title">
+        <div class="skills-layout">
+          <div><div class="section-kicker">04 — Expertise</div></div>
+          <div>
+            <h2 id="expertise-title">A practical AI toolkit.</h2>
+            <p class="section-intro">Tools and methods I have worked with across engineering, research, and teaching.</p>
+            <div class="skills-list" style="margin-top:30px">
+              <div class="skill-group"><h3>AI &amp; language models</h3><p>Generative AI, machine learning, deep learning, NLP, LLMs, prompt engineering, model evaluation, Hugging Face Transformers, Ollama, Mistral, Qwen, DeepSeek</p></div>
+              <div class="skill-group"><h3>Agents &amp; retrieval</h3><p>AI agents, RAG, embeddings, vector search, structured JSON generation, MCP, Copilot Studio</p></div>
+              <div class="skill-group"><h3>MLOps &amp; software</h3><p>Python, REST APIs, Flask, Docker, Kubernetes, CI/CD, Git, Linux, automated experimentation</p></div>
+              <div class="skill-group"><h3>Formal methods</h3><p>Frama-C, ACSL, WP, Why3, Alt-Ergo, OCaml, UPPAAL, Rocq (Coq)</p></div>
+              <div class="skill-group"><h3>Systems engineering</h3><p>Capella, MBSE, UML, SysML, MATLAB / Simulink, embedded systems</p></div>
+              <div class="skill-group"><h3>Data &amp; programming</h3><p>C / C++, Java, SQL, PostgreSQL, MySQL, MongoDB, computer vision, medical imaging</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <div class="section-head">
+          <div class="section-kicker">05 — Education &amp; teaching</div>
+          <div><h2 id="about-title">Curiosity, shared.</h2><p class="section-intro">Teaching has been a consistent part of my work—making technical ideas clear to learners with different backgrounds.</p></div>
+        </div>
+        <div class="education-list">
+          <article class="education-item"><div class="timeline-date">2024 — 2026</div><div><h3>Master’s degree · Computer Science for Aerospace</h3><p>Université Toulouse III – Paul Sabatier, France</p></div></article>
+          <article class="education-item"><div class="timeline-date">2020 — 2024</div><div><h3>Bachelor’s degree · Computer Science, AI specialization</h3><p>Nile University, Cairo, Egypt</p></div></article>
+          <article class="education-item"><div class="timeline-date">2021 — 2026</div><div><h3>Programming instructor &amp; computer science tutor</h3><p>Innova STEM Education · Preply · Programming, computer science, and AI</p></div></article>
+          <article class="education-item"><div class="timeline-date">2026</div><div><h3>AI &amp; Data Trainer</h3><p>Global Knowledge Company · Training engagements at Taibah University and University of Hail</p></div></article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="section-head">
+          <div class="section-kicker">06 — Contact</div>
+          <div><h2 id="contact-title">Let’s build something<br>thoughtful.</h2><p class="section-intro">For AI engineering, research, and collaboration opportunities, get in touch.</p></div>
+        </div>
+        <div class="contact-content">
+          <a class="email" href="mailto:nadeinfarid@gmail.com">nadeinfarid@gmail.com</a>
+          <div class="contact-links"><a href="https://www.linkedin.com/in/nadin-elshafey-5aa901210/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/nadeenfarid" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+      </section>
+    </main>
+    <footer><span>© <span id="year">2026</span> Nadin Elshafey</span><span class="footer-note">Designed as an independent portfolio</span><button class="print-button" type="button" onclick="window.print()">Print / Save as PDF</button></footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
